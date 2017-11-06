@@ -16,7 +16,7 @@
     <div style="margin-top:120px; padding:0 100px;" id="products" class="row list-group _3EibU">
         @foreach (var item in Model)
         {
-            using (Html.BeginForm("Details", "TravelStatus", FormMethod.Post))
+            using (Html.BeginForm("Executed", "TravelExecute", FormMethod.Post))
             {
 
                 @Html.HiddenFor(m => item.id_destination_city)
@@ -35,7 +35,7 @@
                             </div>
 
                             <div>
-                                <span class="templatetext">TR @Html.EditorFor(m => item.id_request)</span>
+                                <span class="templatetext">TE @Html.EditorFor(m => item.id_request)</span>
 
                             </div>
                             <div>

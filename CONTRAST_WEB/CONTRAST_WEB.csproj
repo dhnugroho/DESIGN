@@ -207,6 +207,7 @@
     <Compile Include="Models\fn_tr_rejectlist_Result.cs">
       <DependentUpon>CONTRAST_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImageViewModel.cs" />
     <Compile Include="Models\tb_m_arrange_cashallowance.cs">
       <DependentUpon>CONTRAST_DB.tt</DependentUpon>
     </Compile>
@@ -434,6 +435,7 @@
     <Content Include="Views\Actualcost\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\TravelExecute\Index.cshtml" />
+    <Content Include="Views\TravelExecute\Executed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

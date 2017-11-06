@@ -8,12 +8,12 @@
     asd = ViewBag.RL;
     asd2 = ViewBag.RL2;
 
-} 
- 
+}
+
 <div style="height:100px; padding:70px 0 0 0;" class="well navbar-fixed-top">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/Menu/">Home</a></li>
-        <li class="breadcrumb-item active">Travel Request</li>
+        <li class="breadcrumb-item active">Travel Assignment</li>
     </ol>
 </div>
 
@@ -21,7 +21,7 @@
 {
     <div class="container">
         <div style="margin-top:100px" class="row">
-            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">TRAVEL REQUEST</h4></div>
+            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">TRAVEL ASSIGNMENT</h4></div>
             <div class="col-md-3"></div>
             <form action="" id="loginForm">
                 <div class="col-md-5 col-md-offset-1">
@@ -41,24 +41,78 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-th-large"></i></span>
                         @Html.TextBoxFor(m => m.employee_info.unit_code_code, new { @class = "form-control", @readonly = "readonly" })
                     </div>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
-                        <!--<input class="form-control" type="text" name='division' placeholder="Assigned By" />-->
-                        @Html.TextBoxFor(m => m.travel_request.assign_by, new { @class = "form-control" })
+                    <strong>Select Destination :</strong>
+                    <div style="width:150px;" class="radio">
+                        <label style="float:left;">
+                            <input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="single" checked>
+                            Single
+                        </label>
+                        <label style="float:right;">
+                            <input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="multiple">
+                            Multiple
+                        </label>
                     </div>
-                    <p>Derparture Date :</p>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        @Html.TextBoxFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure" })
+                    <div style="padding:5px" id="des1" class="alert-info">
+                        <strong style="color:deepskyblue">DESTINATION 1</strong>
+                        <p>Derparture Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure" })
+                        </div>
+                        <p>Return Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                        </div>
+                        <div class="form-group input-group">
+                            <button class="btn btn-info">ADD DESTINATION</button>
+                        </div>
                     </div>
-                    <p>Return Date :</p>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                    <div style="padding:5px" id="des2" class="alert-danger">
+                        <strong style="color:deepskyblue">DESTINATION 2</strong>
+                        <p>Derparture Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure" })
+                        </div>
+                        <p>Return Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                        </div>
+                        <div class="form-group input-group">
+                            <button class="btn btn-info">ADD DESTINATION</button>
+                        </div>
                     </div>
-                    <div class="form-group input-group">
-                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                        <input class="form-control" type="text" name='request' placeholder="Duration" />-->
+                    <div style="padding:5px" id="des3" class="alert-warning">
+                        <strong style="color:deepskyblue">DESTINATION 3</strong>
+                        <p>Derparture Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure" })
+                        </div>
+                        <p>Return Date :</p>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                        </div>
+                        <div class="form-group input-group">
+                            <button class="btn btn-info">ADD DESTINATION</button>
+                        </div>
+                    </div>
+                    <strong>New or Renewal Passport :</strong>
+                    <div style="width:125px;" class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.travel_request.passport_flag, true) Yes
+                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios1" value="yes" checked>Yes-->
+                        </label>
+                        <label style="float:right;">
+                            @Html.RadioButtonFor(m => m.travel_request.passport_flag, false) No
+                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios2" value="no"> No-->
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <a href="/Participant/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
                     </div>
                     <!--
                     <label>Budget :</label>
@@ -66,17 +120,17 @@
                     <div class="form-group input-group has-success has-feedback">
                         <span class="input-group-addon">RP.</span>
                         @*@Html.TextBoxFor(m => m.travel_request.allowance_meal_idr, new { @class = "form-control" , placeholder = "Meal Allowance" })*@
-                     
+
                     </div>
                     <div class="form-group input-group has-success has-feedback">
                         <span class="input-group-addon">RP.</span>
                         @*@Html.TextBoxFor(m => m.travel_request.allowance_hotel, new { @class = "form-control" , placeholder = "Hotel Allowance" })*@
-                         
+
                     </div>
                     <div class="form-group input-group has-success has-feedback">
                         <span class="input-group-addon">RP.</span>
                         @*@Html.TextBoxFor(m => m.travel_request.allowance_ticket, new { @class = "form-control",  placeholder = "Allowance Allowance" })*@
-                         
+
                     </div>
                     -->
                     <div class="form-group input-group has-warning">
@@ -85,6 +139,11 @@
                     </div>
                 </div>
                 <div class="col-md-5">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
+                        <!--<input class="form-control" type="text" name='division' placeholder="Assigned By" />-->
+                        @Html.TextBoxFor(m => m.travel_request.assign_by, new { @class = "form-control" })
+                    </div>
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-bold"></i></span>
                         @Html.DropDownListFor(m => m.travel_request.travel_purpose, asd2, "Travel Purpose", new { @class = "form-control", placeholder = "Purpose" })
@@ -106,64 +165,110 @@
                                                 Model
                         ), new { @class = "form-control" })
                     </div>
-                    <strong>Travel Type :</strong>
-                    <div class="radio">
+                    <strong>&nbsp;</strong>
+                    <div style="width:150px" class="radio">
                         <label>
-                            <input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="single" checked>
-                            Single
+                            <input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="single" hidden>
+                        </label>
+                        <label style="float:right;">
+                            <input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="multiple" hidden>
                         </label>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="multiple">
-                            Multiple
-                        </label>
+                    <div style="padding:5px" id="des1" class="alert-info">
+                            <strong>Transportation :</strong>
+                            <div style="width:140px;" class="radio">
+                                <label style="float:left;">
+                                    <input type="radio" name="optionsRadios2" id="optionsRadiosDomestic" value="flight" checked>
+                                    Flight
+                                </label>
+                                <label style="float:right;">
+                                    <input type="radio" name="optionsRadios2" id="optionsRadiosOverseas" value="land">
+                                    Land
+                                </label>
+                            </div>
+                            <strong>Destination :</strong>
+                            <div style="width:170px;" class="radio">
+                                <label>
+                                    <!--<input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="domestic" checked>-->
+                                    @Html.RadioButtonFor(m => m.travel_request.overseas_flag, false) Domestic
+                                </label>
+                                <label style="float:right;">
+                                    <!--<input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="overseas">-->
+                                    @Html.RadioButtonFor(m => m.travel_request.overseas_flag, true) Overseas
+                                </label>
+                            </div>
+                        <div style="margin-bottom:70px">
+                            @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control", placeholder = "Destination" })
+                        </div>
                     </div>
-                    <strong>Destination :</strong>
-                    <div class="radio">
-                        <label>
-                            <!--<input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="domestic" checked>-->
-                            @Html.RadioButtonFor(m => m.travel_request.overseas_flag, false) Domestic
-                        </label>
+                    <div style="padding:5px" id="des2" class="alert-danger">
+                        <strong>Transportation :</strong>
+                        <div style="width:140px;" class="radio">
+                            <label style="float:left;">
+                                <input type="radio" name="optionsRadios2" id="optionsRadiosDomestic" value="flight" checked>
+                                Flight
+                            </label>
+                            <label style="float:right;">
+                                <input type="radio" name="optionsRadios2" id="optionsRadiosOverseas" value="land">
+                                Land
+                            </label>
+                        </div>
+                        <strong>Destination :</strong>
+                        <div style="width:170px;" class="radio">
+                            <label>
+                                <!--<input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="domestic" checked>-->
+                                @Html.RadioButtonFor(m => m.travel_request.overseas_flag, false) Domestic
+                            </label>
+                            <label style="float:right;">
+                                <!--<input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="overseas">-->
+                                @Html.RadioButtonFor(m => m.travel_request.overseas_flag, true) Overseas
+                            </label>
+                        </div>
+                        <div style="margin-bottom:75px">
+                           @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control", placeholder = "Destination" })
+                        </div>
+                        </div>
+                    <div style="padding:5px" id="des3" class="alert-warning">
+                        <strong>Transportation :</strong>
+                        <div style="width:140px;" class="radio">
+                            <label style="float:left;">
+                                <input type="radio" name="optionsRadios2" id="optionsRadiosDomestic" value="flight" checked>
+                                Flight
+                            </label>
+                            <label style="float:right;">
+                                <input type="radio" name="optionsRadios2" id="optionsRadiosOverseas" value="land">
+                                Land
+                            </label>
+                        </div>
+                        <strong>Destination :</strong>
+                        <div style="width:170px;" class="radio">
+                            <label>
+                                <!--<input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="domestic" checked>-->
+                                @Html.RadioButtonFor(m => m.travel_request.overseas_flag, false) Domestic
+                            </label>
+                            <label style="float:right;">
+                                <!--<input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="overseas">-->
+                                @Html.RadioButtonFor(m => m.travel_request.overseas_flag, true) Overseas
+                            </label>
+                        </div>
+                        <div style="margin-bottom:75px">
+                            @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control", placeholder = "Destination" })
+                        </div>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <!--<input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="overseas">-->
-                            @Html.RadioButtonFor(m => m.travel_request.overseas_flag, true) Overseas
-                        </label>
-                    </div>
-                    @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control" , placeholder = "Destination" })
-                    <br />
-                    <strong>New or Renewal Passport ?</strong>
-                    <div class="radio">
-                        <label>
-                            @Html.RadioButtonFor(m => m.travel_request.passport_flag, true) Yes
-                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios1" value="yes" checked>Yes-->
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            @Html.RadioButtonFor(m => m.travel_request.passport_flag, false) No
-                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios2" value="no"> No-->
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <a href="/Participant/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
-                    </div>
-                    <hr />
-                    <label>Bank Account :</label>
-                    <div class="form-group input-group">
-                        @Html.TextBoxFor(m => m.employee_info.bank_account, new { @class = "form-control", @readonly = "readonly" })
-                        <!--<input class="form-control" type="text" name='destination' style="margin-top: 3px; display:block;" placeholder="No. Rekening" />-->
-                        <br />
-                    </div>
+                        <hr />
+                        <label>Bank Account :</label>
+                        <div class="form-group input-group">
+                            @Html.TextBoxFor(m => m.employee_info.bank_account, new { @class = "form-control", @readonly = "readonly" })
+                            <!--<input class="form-control" type="text" name='destination' style="margin-top: 3px; display:block;" placeholder="No. Rekening" />-->
+                            <br />
+                        </div>
 
-                    <br />
-                    <br />
-                    <hr />
-                     <button type="submit" style="width:145px" class="btn btn-info btn-lg" value="Submit">Submit</button>
-                     <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
-                </div>
+                        <br />
+                        <br />
+                        <hr />
+                        <button type="submit" style="width:145px" class="btn btn-info btn-lg" value="Submit">Submit</button>
+                        <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                    </div>
             </form>
         </div>
         <hr />
