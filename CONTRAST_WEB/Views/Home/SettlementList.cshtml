@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "SETTLEMENT LIST";
+    Layout = "~/Views/Shared/_LayoutTiga.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center">
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <form class="width" action="" id="loginForm">
+                    <a href="/Home/Settlement"><img style="margin:5px 0px; width:auto; height:50px" src="~/img/Settlement-icon.png" /><span style="margin-left:10px">RN001 (Traveling to Surabaya)<i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                </form>
+            </div>
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <form class="width" action="" id="loginForm">
+                    <a href="/Home/Settlement"><img style="margin:5px 0px; width:auto; height:50px" src="~/img/Settlement-icon.png" /><span style="margin-left:10px">RN002 (Traveling to Manado)<i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Small modal -->
+
+<script>
+		function goBack() {
+			window.history.back();
+		}
+</script>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            </div>
+            <div class="modal-body">
+                Hai... <strong>USER</strong>. Request Anda Sudah dikirim, tunggu informasi lebih lanjut..
+            </div>
+        </div>
+    </div>
+</div>

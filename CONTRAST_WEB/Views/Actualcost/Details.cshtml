@@ -1,0 +1,128 @@
+﻿@model IEnumerable<CONTRAST_WEB.Models.vw_request_summary>
+@{
+    ViewBag.Title = "ACTUAL COST";
+    Layout = "~/Views/Shared/_LayoutLg.cshtml";
+}
+<div style="height:100px; padding:70px 0 0 0;" class="well navbar-fixed-top">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Menu/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/ActualCost/">Travel List</a></li>
+        <li class="breadcrumb-item active">Actual Cost</li>
+    </ol>
+</div>
+<div style="margin-top:100px" class="row">
+    <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">ADD ACTUAL COST</h4></div>
+    <div class="col-md-3"></div>
+    <form action="" id="loginForm">
+        <div class="col-md-5 col-md-offset-1">
+            <H6 style="text-align:left; color:darkgrey;">Nomer Reg :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                <input class="form-control" type="text" name='noreg' placeholder="No. Reg" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Username :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" type="text" name='username' placeholder="Username" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Class :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-stats"></i></span>
+                <input class="form-control" type="text" name='class' placeholder="Class" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Division :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-th-large"></i></span>
+                <input class="form-control" type="text" name='division' placeholder="Division" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Assigned By :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
+                <input class="form-control" type="text" name='division' placeholder="Assigned By" disabled />
+            </div>
+        </div>
+        <div class="col-md-5">
+            <H6 style="text-align:left; color:darkgrey;">Reason Of Assigment :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                <input class="form-control" type="text" name='reason' placeholder="Reason of Assigment" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Request Type :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+                <input class="form-control" type="text" name='reason' placeholder="Request Type" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Derparture Date :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input class="form-control" type="datetime-local" name='departure' placeholder="Departure" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Return Date :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input class="form-control" type="datetime-local" name='return' placeholder="Return" disabled />
+            </div>
+            <H6 style="text-align:left; color:darkgrey;">Duration :</H6>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                <input class="form-control" type="text" name='request' placeholder="Duration" disabled />
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-1"><H5 class="h5s">Actual Cost</H5></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-5 col-md-offset-1">
+            <H6 style="text-align:left; color:darkgrey;">Planing Cost Hotel</H6>
+            <div class="form-group input-group">
+                <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <H6 style="text-align:left; color:darkgrey;">Cost Hotel</H6>
+            <div class="form-group input-group">
+                <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+            </div>
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+            <H6 style="text-align:left; color:darkgrey;">Planing Cost Flight</H6>
+            <div class="form-group input-group">
+                <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <H6 style="text-align:left; color:darkgrey;">Cost Flight</H6>
+            <div class="form-group input-group">
+                <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+            </div>
+
+            <button style="width:175px" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm">Submit</button>
+            <button style="width:175px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+
+            <hr />
+        </div>
+    </form>
+</div>
+<!-- Small modal -->
+
+<script>
+        function goBack() {
+            window.history.back();
+        }
+</script>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            </div>
+            <div class="modal-body">
+                Hai... <strong>USER</strong>. Request Anda Sudah dikirim, tunggu informasi lebih lanjut..
+            </div>
+        </div>
+    </div>
+</div>

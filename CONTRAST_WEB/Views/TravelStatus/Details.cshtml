@@ -1,0 +1,118 @@
+﻿@model CONTRAST_WEB.Models.TravelRequestHelper
+@{
+    ViewBag.Title = "TRAVEL STATUS";
+    Layout = "~/Views/Shared/_LayoutLg.cshtml";
+}
+
+@using (Html.BeginForm("Index", "TravelRequestValidation", FormMethod.Post))
+{
+    <div class="container">
+        <div style="margin-top:100px" class="row">
+            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">TRAVEL REQUEST</h4></div>
+            <div class="col-md-3"></div>
+            <form action="" id="loginForm">
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                        @Html.TextBoxFor(m => m.employee_info.code, new { @class = "form-control", placeholder = "No Reg", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.TextBoxFor(m => m.employee_info.name, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-stats"></i></span>
+                        @Html.TextBoxFor(m => m.employee_info.@class, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th-large"></i></span>
+                        @Html.TextBoxFor(m => m.employee_info.unit_code_code, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-check"></i></span>
+                        <!--<input class="form-control" type="text" name='division' placeholder="Assigned By" />-->
+                        @Html.TextBoxFor(m => m.travel_request.assign_by, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <p>Derparture Date :</p>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        @Html.TextBoxFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure", @readonly = "readonly" })
+                    </div>
+                    <p>Return Date :</p>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        <input class="form-control" type="text" name='request' placeholder="Duration" />-->
+                    </div>
+                    <!--
+                    <label>Budget :</label>
+                    <br />
+                    <div class="form-group input-group has-success has-feedback">
+                        <span class="input-group-addon">RP.</span>
+                        @*@Html.TextBoxFor(m => m.travel_request.allowance_meal_idr, new { @class = "form-control" , placeholder = "Meal Allowance" })*@
+
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <span class="input-group-addon">RP.</span>
+                        @*@Html.TextBoxFor(m => m.travel_request.allowance_hotel, new { @class = "form-control" , placeholder = "Hotel Allowance" })*@
+
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <span class="input-group-addon">RP.</span>
+                        @*@Html.TextBoxFor(m => m.travel_request.allowance_ticket, new { @class = "form-control",  placeholder = "Allowance Allowance" })*@
+
+                    </div>
+                    -->
+                    <div class="form-group input-group has-warning">
+                        <!--<span class="input-group-addon">RP.</span>
+                        <input class="form-control" type="number" name='budget' placeholder="TOTAL" />-->
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-bold"></i></span>
+                        @*@Html.DropDownListFor(m => m.travel_request.travel_purpose, asd2, "Travel Purpose", new { @class = "form-control", placeholder = "Purpose" })*@
+                        @Html.TextBoxFor(m => m.travel_request.travel_purpose, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                        @Html.TextBoxFor(m => m.travel_request.reason_of_assigment, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+                        @Html.TextBoxFor(m => m.travel_request.request_type, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                    </div>
+                    <strong>Destination :</strong>
+                    @Html.TextBoxFor(m => m.travel_request.overseas_flag, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                    <strong>Destination :</strong>
+                    @Html.TextBoxFor(m => m.travel_request.id_destination_city, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                    <br />
+                    <strong>New or Renewal Passport ?</strong>
+                    @Html.TextBoxFor(m => m.travel_request.passport_flag, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                    
+                    <div class="form-group">
+                        <a href="/Participant/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
+                    </div>
+                    <hr />
+                    <label>Bank Account :</label>
+                    <div class="form-group input-group">
+                        @*@Html.TextBoxFor(m => m.employee_info.bank_account, new { @class = "form-control", @readonly = "readonly" })*@
+                        @Html.TextBoxFor(m => m.employee_info.bank_account, new { @class = "form-control", placeholder = "Reason Assigment", @readonly = "readonly" })
+                        <!--<input class="form-control" type="text" name='destination' style="margin-top: 3px; display:block;" placeholder="No. Rekening" />-->
+                        <br />
+                    </div>
+
+                    <br />
+                    <br />
+                    <hr />
+                    <button type="submit" style="width:145px" class="btn btn-info btn-lg" value="Submit">Submit</button>
+                    <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <hr />
+    </div>
+}

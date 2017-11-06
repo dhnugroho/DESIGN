@@ -1,0 +1,185 @@
+﻿@model CONTRAST_WEB.Models.TravelRequestHelper
+@{
+    ViewBag.Title = "Validation";
+    Layout = "~/Views/Shared/_LayoutLg.cshtml";
+    List<SelectListItem> asd = new List<SelectListItem>();
+    asd = ViewBag.RL;
+
+}
+
+<div style="height:100px; padding:70px 0 0 0;" class="well navbar-fixed-top">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Menu/">Home</a></li>
+        <li class="breadcrumb-item active">Travel Request</li>
+    </ol>
+</div>
+
+@using (Html.BeginForm("Index2", "Menu", FormMethod.Post))
+{
+    <div class="container">
+        <div style="margin-top:100px" class="row">
+            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">Data Verification</h4></div>
+            <div class="col-md-3"></div>
+            <form action="" id="loginForm">
+                <div class="col-md-5 col-md-offset-1">
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">No Reg</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.employee_info.code, new { @class = "form-control", placeholder = "No Reg", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.employee_info.code)
+                    </div>
+                   
+                    
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Username</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.employee_info.name, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.employee_info.name)
+                    </div>
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Class</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.employee_info.@class, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.employee_info.@class)
+                    </div>
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Division</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.employee_info.unit_code_code, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.employee_info.unit_code_code)
+                    </div>
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Travel Purpose</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        <!--<input class="form-control" type="text" name='division' placeholder="Assigned By" />-->
+                        @Html.DisplayFor(m => m.travel_request.travel_purpose, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.travel_request.travel_purpose)
+                    </div>
+
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Assigned By</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        <!--<input class="form-control" type="text" name='division' placeholder="Assigned By" />-->
+                        @Html.DisplayFor(m => m.travel_request.assign_by, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.travel_request.assign_by)
+                    </div>
+
+                        <p>Derparture Date :</p>
+                        <div class="form-group input-group">
+                            <span>@Html.DisplayFor(m => m.travel_request.start_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Departure" })</span> 
+                            @Html.HiddenFor(m => m.travel_request.start_date)
+                        </div>
+                        <p>Return Date :</p>
+                        <div class="form-group input-group">
+                            @Html.DisplayFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                            @Html.HiddenFor(m => m.travel_request.end_date)
+                        </div>
+                    
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Duration</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.travel_request.duration, new { @class = "form-control", placeholder = "Duration" })
+                        @Html.HiddenFor(m => m.travel_request.duration)
+                    </div>                
+                        
+
+                        <div class="form-group input-group has-warning">
+                            <!--<span class="input-group-addon">RP.</span>
+            <input class="form-control" type="number" name='budget' placeholder="TOTAL" />-->
+                        </div>
+                    </div>
+
+                <div class="col-md-5">
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Reason Of Assignment</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.travel_request.reason_of_assigment, new { @class = "form-control", placeholder = "Reason Assigment" })
+                        @Html.HiddenFor(m => m.travel_request.reason_of_assigment)
+                    </div>
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Request Type</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        <label>@Html.DisplayFor(m => m.travel_request.request_type, new { @class = "form-control", placeholder = "T" })</label> 
+                        @Html.HiddenFor(m => m.travel_request.request_type)
+                    </div>
+                                        
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Destination</label>
+                    <div class="radio">
+                        @Html.DisplayFor(m => m.travel_request.overseas_flag, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.travel_request.overseas_flag)
+                    </div>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        <label>@Html.DisplayFor(m => m.travel_request.id_destination_city, new { @class = "form-control", placeholder = "T" })</label>
+                        @Html.HiddenFor(m => m.travel_request.id_destination_city)
+                    </div>
+
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">New or Renewal Passport ?</label>
+                           
+                        <div class="radio">
+                            <label>
+                                @Html.DisplayFor(m => m.travel_request.passport_flag, new { @class = "form-control", @readonly = "readonly" })
+                                @Html.HiddenFor(m => m.travel_request.passport_flag)
+                                <!--<input type="radio" name="optionsRadios2" id="optionsRadios2" value="no"> No-->
+                            </label>
+                        </div>
+                        <!--
+        <div class="form-group">
+            <a href="/Participant/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
+        </div>
+        -->
+                        <hr />
+                    <label style="font-family:'Lucida Sans'; font-size:10px; margin-bottom:5px; color:gray;">Bank Account</label>
+                    <div class="form-group input-group" style="border-bottom:0.5px solid grey; width:450px; color:grey; text-align:left; ">
+                        @Html.DisplayFor(m => m.employee_info.bank_account, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.HiddenFor(m => m.employee_info.bank_account)
+                        <!--<input class="form-control" type="text" name='destination' style="margin-top: 3px; display:block;" placeholder="No. Rekening" />-->
+                        <br />
+                    </div>
+
+                    <label>Budget :</label>
+                    <br />
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Meal Allowance : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.allowance_meal_idr, new { @class = "form-control", placeholder = "Meal Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.allowance_meal_idr)
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Travel Allowance : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.allowance_hotel, new { @class = "form-control", placeholder = "Hotel Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.allowance_hotel)
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Ticket Allowance : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.allowance_ticket, new { @class = "form-control", placeholder = "Allowance Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.allowance_ticket)
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Winter Allowance : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.allowance_winter, new { @class = "form-control", placeholder = "Allowance Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.allowance_winter)
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Preparation Allowance : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.allowance_preparation, new { @class = "form-control", placeholder = "Allowance Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.allowance_preparation)
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <label>Grand Total : RP.</label>
+                        @Html.DisplayFor(m => m.travel_request.grand_total_allowance, new { @class = "form-control", placeholder = "Allowance Allowance" })
+                        @Html.HiddenFor(m => m.travel_request.grand_total_allowance)
+                    </div>
+
+                         @Html.HiddenFor(m => m.travel_request.destination_code)
+                         @Html.HiddenFor(m => m.travel_request.apprv_flag_lvl5)
+                         @Html.HiddenFor(m => m.travel_request.apprv_flag_lvl1)
+                         @Html.HiddenFor(m => m.travel_request.apprv_flag_lvl2)
+                         @Html.HiddenFor(m => m.travel_request.apprv_flag_lvl3)
+                         @Html.HiddenFor(m => m.travel_request.apprv_flag_lvl4)
+
+                         @Html.HiddenFor(m => m.travel_request.exep_empolyee)
+                         
+                         
+                        <button type="submit" style="width:145px" class="btn btn-info btn-lg" value="Submit">Submit</button>
+                        <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                    </div>
+            </form>
+        </div>
+        <hr />
+    </div>
+}

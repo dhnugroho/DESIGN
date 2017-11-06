@@ -1,0 +1,113 @@
+﻿@model CONTRAST_WEB.Models.TravelRequestHelper
+@{
+
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div id="products" class="row list-group _3EibU">
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            @using (Html.BeginForm("Index", "TravelRequest", FormMethod.Post))
+            {
+                <a style="justify-content:center;" class="Tr6Hj" data-reactid="42">
+                    @Html.HiddenFor(m => m.employee_info.code)
+                    @Html.HiddenFor(m => m.employee_info.name)
+                    @Html.HiddenFor(m => m.employee_info.@class)
+                    @Html.HiddenFor(m => m.employee_info.entry_date)
+                    @Html.HiddenFor(m => m.employee_info.position)
+                    @Html.HiddenFor(m => m.employee_info.bank_account)
+                    @Html.HiddenFor(m => m.employee_info.unit_code_code)
+                    @Html.HiddenFor(m => m.employee_info.unit_code_id)
+                    @Html.HiddenFor(m => m.employee_info.unit_code_name)
+
+                    <div class="_2hTgM" data-reactid="47"><input type="image" img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/Travel-Request-icon.png" alt="" /></div>
+                    <div class="_2hTgM" data-reactid="47">TRAVEL REQUEST</div>
+
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" data-reactid="42">
+                @using (Html.BeginForm("Index", "TravelStatus", FormMethod.Post))
+                {
+                    <div class="_2hTgM" data-reactid="47"><input type="image" img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/Travel-Status-icon.png" alt="" /></div>
+                    <div class="_2hTgM" data-reactid="47">TRAVEL STATUS</div>
+                    @Html.HiddenFor(m => m.employee_info.code)
+                    @Html.HiddenFor(m => m.employee_info.name)
+                }
+            </a>
+        </div>
+    </div>
+
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            @using (Html.BeginForm("Index", "ActualCost", FormMethod.Post))
+            {
+                <a class="Tr6Hj" data-reactid="42">
+                    <div class="_2hTgM" data-reactid="47"><input type="image" img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/Travel-Execution-icon.png" alt="" /></div>
+                    <div class="_2hTgM" data-reactid="47">EXECUTION</div>
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            @using (Html.BeginForm("Index", "SettlementList", FormMethod.Post))
+            {
+                @Html.HiddenFor(m => m.employee_info.code)
+                @Html.HiddenFor(m => m.employee_info.name)
+
+                <a class="Tr6Hj" data-reactid="42">
+                    <div class="_2hTgM" data-reactid="47"><input type="image" img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/Settlement-icon.png" alt="" /></div>
+                    <div class="_2hTgM" data-reactid="47">SETTLEMENT</div>
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" href="/ActualCost/" data-reactid="42">
+                <div class="_2hTgM" data-reactid="47"><img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/menu-actual-cost.png" alt="" /></div>
+                <div class="_2hTgM" data-reactid="47">ACTUAL COST</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" href="/CostVerify/" data-reactid="42">
+                <div class="_2hTgM" data-reactid="47"><img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/menu-upload-dit.png" alt="" /></div>
+                <div class="_2hTgM" data-reactid="47">ACTUAL COST VERIVICATION</div>
+            </a>
+        </div>
+    </div>
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" href="/DIT/" data-reactid="42">
+                <div class="_2hTgM" data-reactid="47"><img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/menu-upload-dit.png" alt="" /></div>
+                <div class="_2hTgM" data-reactid="47">UPLOAD DIT</div>
+            </a>
+        </div>
+    </div>
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" href="/DIT/" data-reactid="42">
+                <div class="_2hTgM" data-reactid="47"><img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/menu-upload-master.png" alt="" /></div>
+                <div class="_2hTgM" data-reactid="47">UPLOAD MASTER</div>
+            </a>
+        </div>
+    </div>
+    <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail border">
+            <a class="Tr6Hj" href="/DIT/" data-reactid="42">
+                <div class="_2hTgM" data-reactid="47"><img style="height:50px; width:50px; margin:0px 0px; padding:0 0;" src="~/img/menu-generate-file.png" alt="" /></div>
+                <div class="_2hTgM" data-reactid="47">GENERATE FILE</div>
+            </a>
+        </div>
+    </div>
+</div>

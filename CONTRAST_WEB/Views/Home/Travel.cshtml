@@ -1,0 +1,134 @@
+﻿@model WebTemplate.Models.tb_r_travel_request 
+@{
+    ViewBag.Title = "TRAVEL REQUEST";
+    Layout = "~/Views/Shared/_LayoutTiga.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Menu", FormMethod.Post))
+{
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center">
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">               
+                          
+                <form name="contactForm" method="post" class="width" action="" id="loginForm">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                        @Html.TextBoxFor(m=> m.no_reg, new { @class = "form-control", placeholder = "No Reg" })
+                        <!--<input class="form-control" type="text" name='noreg' placeholder="No. Reg" /> -->
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <!--here-->
+                        <input class="form-control" type="text" name='username' placeholder="Username" />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-stats"></i></span>                         
+                        <input class="form-control" type="text" name='class' placeholder="Class" />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th-large"></i></span>
+                         <input class="form-control" type="text" name='division' placeholder="Division" />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                         @Html.TextBoxFor(m => m.reason_of_assigment, new { @class = "form-control", placeholder = "Reason Assigment" })
+                        <!-- <input class="form-control" type="text" name='reason' placeholder="Reason Assigment" />-->
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+                         
+                        @Html.DropDownListFor(m => m.request_type,new SelectList(
+                                                new[]
+                                                {
+                                                     new { Value = "true", Text = "Planed" ,},
+                                                     new { Value = "false", Text = "Unplanned" },
+                                                },
+                                                "Value",
+                                                "Text",
+                                                Model
+                                                ), new { @class = "form-control" })
+                        <!--<input class="form-control" type="text" name='request' placeholder="Request Type" />-->
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        @Html.TextBoxFor(m => m.start_date, new { @class = "form-control", @type = "datetime-local",placeholder = "Departure" })
+                        <!--<input class="form-control" type="datetime-local" name='departure' placeholder="Departure" />-->
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        @Html.TextBoxFor(m => m.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
+                        <!--<input class="form-control" type="datetime-local" name='return' placeholder="Return" />-->
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        @Html.TextBoxFor(m => m.departure, new { @class = "form-control", placeholder = "Duration" })
+                        <!--<input class="form-control" type="text" name='request' placeholder="Duration" />-->
+                    </div>                    
+                    <strong>Destination :</strong>
+                    <div class="radio">                        
+                        <label>
+                            <!--<input type="radio" name="optionsRadios1" id="optionsRadiosDomestic" value="domestic" checked>-->
+                        @Html.RadioButtonFor(m => m.overseas_flag, true) Domestic    
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <!--<input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="overseas">-->
+                            @Html.RadioButtonFor(m => m.overseas_flag, true) Overseas
+                        </label>
+                    </div>
+                    @Html.TextBoxFor(m => m.destination_code, new { @class = "form-control", placeholder = "Destination City" })
+                    <!--<input class="form-control" type="text" name='destination' style="margin-top: 3px;" placeholder="Where To Go" />-->
+                    <br />
+                    <strong>Need Passpor ?</strong>
+                    <div class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.passport_flag, true) Yes
+                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios1" value="yes" checked>Yes-->
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            @Html.RadioButtonFor(m => m.passport_flag, false) No
+                            <!--<input type="radio" name="optionsRadios2" id="optionsRadios2" value="no"> No-->                           
+                        </label>
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <span class="input-group-addon">RP.</span>
+                        <input class="form-control" type="number" name='budget' placeholder="budget" />
+                    </div>
+                    <div class="form-group input-group has-success has-feedback">
+                        <span class="input-group-addon">RP.</span>
+                        <input class="form-control" type="number" name='availability' placeholder="budget availability" disabled/>
+                    </div>
+                    <strong>Payment Transfer to :</strong>
+                    <input class="form-control" type="text" name='destination' style="margin-top: 3px; display:block;" placeholder="No. Rekening" />
+                    <br />
+                    <div class="form-group">
+                       <!-- <a href="/Home/Participant"><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</button></a>-->
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <!--<button style="width:145px" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm">Submit</button>-->
+                        <button type="submit" style="width:145px" class="btn btn-info btn-lg" value="Submit" >Submit</button>
+                        <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                    </div>               
+                </form>               
+                <hr>
+            </div>
+            </div>
+        </div>
+    </div>
+
+}
+            <!-- Small modal -->
+    
+    <script>
+		function goBack() {
+			window.history.back();
+		}
+    </script>
+
+    

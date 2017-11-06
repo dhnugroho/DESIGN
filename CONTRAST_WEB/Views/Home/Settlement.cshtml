@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewBag.Title = "SETTLEMENT";
+    Layout = "~/Views/Shared/_LayoutTiga.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center">
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <form class="width" action="/Home/Contact" id="settlementForm">
+                    <H5 style="text-align:left; color:deepskyblue;">MEAL</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled/>
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <H5 style="text-align:left; color:deepskyblue;">HOTEL</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <H5 style="text-align:left; color:deepskyblue;">TICKET</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <H5 style="text-align:left; color:deepskyblue;">LAND TRANSPORTATION</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <H5 style="text-align:left; color:deepskyblue;">LAUNDRY</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <H5 style="text-align:left; color:deepskyblue;">OTHER</H5>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                    <div class="form-group input-group">
+                        <input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />
+                        <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">.IDR</i></span>
+                    </div>
+                    <div style="position:relative;">
+                        <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                            Choose File...
+                            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        &nbsp;
+                        <span class='label label-info' id="upload-file-info"></span>
+                        <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                    </div>
+                    <hr />
+                    <label>TOTAL</label>
+                    <H6 style="text-align:left; color:darkgrey;">Suspense</H6><span>RP. 3.000.000</span>
+                    <H6 style="text-align:left; color:darkgrey;">Settlement</H6></H6><span>RP. 3.000.000</span>
+                    <hr class="bigHr"/>
+                    </H6><span>RP. (0,-)</span>&nbsp;<label style="text-align:left; color:red;">REFUND</label>
+                    <hr />
+                        <div class="form-group">
+                            <button style="width:145px" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm">Submit</button>
+                            <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                        </div>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Small modal -->
+    
+    <script>
+		function goBack() {
+			window.history.back();
+		}
+    </script>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="mySmallModalLabel">Succes</h4>
+                </div>
+                <div class="modal-body">
+                    Hai... <strong>USER</strong>. Lakukan Pembayaran Ke Rekening XXXXXX berikut untuk refunding settlement
+                </div>
+            </div>
+        </div>
+    </div>
+

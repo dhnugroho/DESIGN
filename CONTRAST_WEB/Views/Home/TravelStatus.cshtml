@@ -1,0 +1,104 @@
+﻿@model IEnumerable<WebTemplate.Models.Participant>
+@{
+    ViewBag.Title = "TRAVEL STATUS";
+    Layout = "~/Views/Shared/_LayoutTiga.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center">
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <form class="width" action="" id="loginForm">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                        <input class="form-control" type="text" name='noreg' placeholder="No. Reg" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="form-control" type="text" name='username' placeholder="username" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-stats"></i></span>
+                        <input class="form-control" type="text" name='class' placeholder="Class" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th-large"></i></span>
+                        <input class="form-control" type="text" name='division' placeholder="division" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                        <input class="form-control" type="text" name='reason' placeholder="Reason Assigment" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+                        <input class="form-control" type="text" name='request' placeholder="Request Type" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input class="form-control" type="datetime-local" name='departure' placeholder="Departure" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input class="form-control" type="datetime-local" name='return' placeholder="Return" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        <input class="form-control" type="text" name='request' placeholder="Duration" disabled />
+                    </div>
+                    <strong>Destination</strong>
+                    <input class="form-control" type="password" name='availability' style="margin-top: 3px;" placeholder="Maroko" disabled />
+                    <br />
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">RP.</span>
+                        <input class="form-control" type="password" name='budget' placeholder="5000000" disabled />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">RP.</span>
+                        <input class="form-control" type="password" name='availability' placeholder="5000000" disabled />
+                    </div>
+                    <strong>PARTICIPANT :</strong>
+                    <div class="form-group">
+                        @foreach (var item in Model)
+                        {
+                            <ul style="background-color:gainsboro; border-radius:25px; padding-left:15px; margin:3px 50px 0 3px;">
+                                <li style="list-style:none;">@Html.DisplayFor(modelItem => item.Name)</li>
+                            </ul>
+                        }
+                    </div>
+                </form>
+                <div class="well">
+                    <img style="height:35px; width:auto;" src="~/img/small_logo_c.png" />
+                    <span><strong>CURRENT STATUS :</strong></span>
+                </div>
+                <ul>
+                    <li class="blue" style="list-style-type:circle">Approved by <strong>Div. Head</strong></li>
+                    <hr style="margin:5px 0" />
+                    <li class="blue" style="list-style-type:circle">Approved by <strong>FD</strong></li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Small modal -->
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            </div>
+            <div class="modal-body">
+                Hai... <strong>USER</strong>. Request Anda Sudah dikirim, tunggu informasi lebih lanjut..
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,389 @@
+﻿@model IEnumerable<CONTRAST_WEB.Models.vw_request_summary>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.group_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_dit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.no_reg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_destination_city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.destination_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.multiple_destination_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.participants_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.overseas_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_travel_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.request_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.travel_purpose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.invited_by)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reason_of_assigment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.air_ticket_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passport_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_by_dh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_by_fd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_by_vp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_by_pd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_dh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_fd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_vp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_pd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_dh_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_fd_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_vp_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apprv_pd_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.remaining_budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.exep_empolyee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.end_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.create_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.transit_by_land)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.transit_by_air)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_transit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_transit_by_land)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_transit_by_air)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_allowance_transit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_meal_idr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_meal_jpy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_meal_usd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_hotel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_transportation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_laundry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_miscellaneous)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_allowance_basic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_ticket)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_visa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.allowance_passport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_allowance_document)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.grand_total_allowance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status_request)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.active_flag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.destination_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.region_name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.group_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_dit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.no_reg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_destination_city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.multiple_destination_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.participants_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.overseas_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_travel_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.request_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.travel_purpose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.invited_by)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reason_of_assigment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.air_ticket_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passport_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_by_dh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_by_fd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_by_vp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_by_pd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_dh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_fd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_vp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_pd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_dh_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_fd_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_vp_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apprv_pd_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.remaining_budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exep_empolyee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.end_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.create_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transit_by_land)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transit_by_air)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_transit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_transit_by_land)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_transit_by_air)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_allowance_transit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_meal_idr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_meal_jpy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_meal_usd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_hotel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_transportation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_laundry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_miscellaneous)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_allowance_basic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_ticket)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_visa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.allowance_passport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_allowance_document)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grand_total_allowance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status_request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active_flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.region_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id_request }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id_request }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id_request })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

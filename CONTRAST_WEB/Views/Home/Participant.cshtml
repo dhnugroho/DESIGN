@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "PARTICIPANT";
+    Layout = "~/Views/Shared/_LayoutTiga.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="Absolute-Center">
+            <hr>
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <form class="width" action="/Home/Contact" id="loginForm">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="form-control" type="text" name='username' placeholder="Noreg." />
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input class="form-control" type="text" name='username' placeholder="Automatic Name" />
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-toolbar btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD</button>
+                    </div>
+                </form>
+                <div class="well">
+                    <img style="height:50px; width:auto;" src="~/img/small_logo_c.png" />
+                    <span><strong>LIST PARTICIPANT :</strong></span>
+                    <ol>
+                        <li>Andri Sucipto</li>
+                        <li>Andri Wongso</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        function goBack() {
+            window.history.back();
+        }
+</script>

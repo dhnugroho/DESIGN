@@ -1,0 +1,182 @@
+﻿@model CONTRAST_WEB.Models.tb_r_travel_settlement
+
+@{
+    ViewBag.Title = "SETTLEMENT";
+    Layout = "~/Views/Shared/_LayoutLg.cshtml";
+}
+<div style="height:100px; padding:70px 0 0 0;" class="well navbar-fixed-top">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Menu/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Settlement/">Settlement List</a></li>
+        <li class="breadcrumb-item active">Settlement</li>
+    </ol>
+</div>
+
+@using (Html.BeginForm("Index","Menu",FormMethod.Post))
+{
+<div class="container">
+    <div style="margin-top:110px" class="row">
+        <form class="width" action="/Home/Contact" id="settlementForm">
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">MEAL</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    @Html.TextBoxFor(m=>m.allowance_meal,new { placeholder ="Availability",@class="form-control"})
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.settlement_meal,new { placeholder="Budget",@class="form-control"})
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">HOTEL</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.actualcost_hotel,new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m => m.settlement_hotel, new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">TICKET</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.actualcost_flight, new { @class = "form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.settlement_flight, new { @class = "form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">LAND TRANSPORTATION</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.allowance_transportation, new { @class = "form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.settlement_transportation,new {@class="form-control"})
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div style="position:relative;">
+                    <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                        Choose File...
+                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info5").html($(this).val());'>
+                    </a>
+                    &nbsp;
+                    <span class='label label-info' id="upload-file-info5"></span>
+                    <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">LAUNDRY</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.allowance_laundry,new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.settlement_laundry,new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div style="position:relative;">
+                    <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                        Choose File...
+                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info6").html($(this).val());'>
+                    </a>
+                    &nbsp;
+                    <span class='label label-info' id="upload-file-info6"></span>
+                    <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1"><H5 class="h5s">OTHER</H5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5 col-md-offset-1">
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.allowance_miscellaneous,new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Availability" disabled />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(m=>m.settlement_miscellaneous,new {@class="form-control" })
+                    <!--<input class="form-control" type="text" name='preparation_allowance' placeholder="Budget" />-->
+                    <span class="input-group-addon"><i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" class="glyphicon">IDR</i></span>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div style="position:relative;">
+                    <a style="font-size:12px" class='btn btn-primary' href='javascript:;'>
+                        Choose File...
+                        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40" onchange='$("#upload-file-info7").html($(this).val());'>
+                    </a>
+                    &nbsp;
+                    <span class='label label-info' id="upload-file-info7"></span>
+                    <p style="font-style:italic; color:cadetblue;">*Max size file 3MB</p>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <br />
+            </div>
+            <div style="margin-left:0px" class="col-md-5 col-md-offset-1">
+                <hr />
+                <label>TOTAL</label>
+                <H6 style="text-align:left; color:darkgrey;">Suspense</H6><span>RP. 3.000.000</span>
+                <H6 style="text-align:left; color:darkgrey;">Settlement</H6><span>RP. 3.000.000</span>
+                <hr class="bigHr" />
+                <span>RP. (0,-)</span>&nbsp;<label style="text-align:left; color:red;">REFUND</label>
+                <hr />
+                <div class="form-group">
+                    <button style="width:145px" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm">Submit</button>
+                    <button style="width:145px" type="button" class="btn btn-default btn-lg" onclick="goBack()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr />
+</div>
+}
+

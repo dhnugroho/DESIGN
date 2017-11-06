@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CONTRAST_WEB.Models.vw_request_summary>
+
+@{
+    ViewBag.Title = "Travel Status List";
+    Layout = "~/Views/Shared/_LayoutLg.cshtml";
+}
+<div style="height:100px; padding:70px 0 0 0;" class="well navbar-fixed-top">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Menu/">Home</a></li>
+        <li class="breadcrumb-item active">Travel Execute</li>
+    </ol>
+</div>
+
+
+<div class="container">
+    <div style="margin-top:120px; padding:0 100px;" id="products" class="row list-group _3EibU">
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("Details", "TravelStatus", FormMethod.Post))
+            {
+
+                @Html.HiddenFor(m => item.id_destination_city)
+                @Html.HiddenFor(m => item.allowance_meal_idr)
+                @Html.HiddenFor(m => item.allowance_miscellaneous)
+                @Html.HiddenFor(m => item.allowance_passport)
+                @Html.HiddenFor(m => item.allowance_ticket)
+                @Html.HiddenFor(m => item.allowance_transit_by_air)
+
+                <div class="item col-xs-6 col-lg-6">
+                    <div class="thumbnail">
+                        <div class="clearfix">
+                            <div class="column content">
+                                <input type="image" img style="margin:5px 0px; width:auto; height:50px" src="~/img/Travel-Status-icon-b.png" />
+
+                            </div>
+
+                            <div>
+                                <span class="templatetext">TR @Html.EditorFor(m => item.id_request)</span>
+
+                            </div>
+                            <div>
+                                <span class="fnt1">Destination: @Html.EditorFor(m => item.destination_name)</span>
+
+                            </div>
+                            <div>
+                                <span class="fnt1">Status: Submitted</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
