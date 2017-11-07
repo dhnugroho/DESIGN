@@ -21,7 +21,8 @@
 {
     <div class="container">
         <div style="margin-top:100px" class="row">
-            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px;">TRAVEL ASSIGNMENT</h4></div>
+            <div class="col-md-8 col-md-offset-1"><h4 style="text-align:left; padding:10px; margin-bottom:0px;">TRAVEL ASSIGNMENT</h4></div>
+            <div class="col-md-8 col-md-offset-1"><h5 style="text-align:left; margin-top:0px; padding:0 10px;">"Surat Perintah Perjalanan Dinas"</h5></div>
             <div class="col-md-3"></div>
             <form action="" id="loginForm">
                 <div class="col-md-5 col-md-offset-1">
@@ -52,7 +53,7 @@
                             Multiple
                         </label>
                     </div>
-                    <div style="padding:5px" id="des1" class="alert-info">
+                    <div style="padding:5px; height:220px;" id="des1">
                         <strong style="color:deepskyblue">DESTINATION 1</strong>
                         <p>Derparture Date :</p>
                         <div class="form-group input-group">
@@ -64,11 +65,13 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
                         </div>
-                        <div class="form-group input-group">
-                            <button class="btn btn-info">ADD DESTINATION</button>
+                        <div style="margin-bottom:0px;" class="form-group input-group">
+                            <!--<button class="btn btn-info">ADD DESTINATION</button>-->
+                            <a class="btn btn-info" id="b1show">ADD DESTINATION</a>
+                            <!--<a class="btn btn-info" id="b1hide">CANCEL</a>-->
                         </div>
                     </div>
-                    <div style="padding:5px" id="des2" class="alert-danger">
+                    <div style="padding:5px; height:220px;" id="des2" hidden>
                         <strong style="color:deepskyblue">DESTINATION 2</strong>
                         <p>Derparture Date :</p>
                         <div class="form-group input-group">
@@ -81,10 +84,10 @@
                             @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
                         </div>
                         <div class="form-group input-group">
-                            <button class="btn btn-info">ADD DESTINATION</button>
+                            <a class="btn btn-info" id="b2show">ADD DESTINATION</a>
                         </div>
                     </div>
-                    <div style="padding:5px" id="des3" class="alert-warning">
+                    <div style="padding:5px; height:220px;" id="des3" hidden>
                         <strong style="color:deepskyblue">DESTINATION 3</strong>
                         <p>Derparture Date :</p>
                         <div class="form-group input-group">
@@ -97,9 +100,10 @@
                             @Html.TextBoxFor(m => m.travel_request.end_date, new { @class = "form-control", @type = "datetime-local", placeholder = "Return" })
                         </div>
                         <div class="form-group input-group">
-                            <button class="btn btn-info">ADD DESTINATION</button>
+                            <a class="btn btn-info" id="b3show">ADD DESTINATION</a>
                         </div>
                     </div>
+                    <br />
                     <strong>New or Renewal Passport :</strong>
                     <div style="width:125px;" class="radio">
                         <label>
@@ -112,7 +116,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <a href="/Participant/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
+                        <a href="/Participants/" class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Participant</a>
                     </div>
                     <!--
                     <label>Budget :</label>
@@ -174,7 +178,8 @@
                             <input type="radio" name="optionsRadios1" id="optionsRadiosOverseas" value="multiple" hidden>
                         </label>
                     </div>
-                    <div style="padding:5px" id="des1" class="alert-info">
+                    <div style="padding:5px; height:220px;" id="des1">
+                        <hr />
                             <strong>Transportation :</strong>
                             <div style="width:140px;" class="radio">
                                 <label style="float:left;">
@@ -197,11 +202,12 @@
                                     @Html.RadioButtonFor(m => m.travel_request.overseas_flag, true) Overseas
                                 </label>
                             </div>
-                        <div style="margin-bottom:70px">
+                        <div>
                             @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control", placeholder = "Destination" })
                         </div>
                     </div>
-                    <div style="padding:5px" id="des2" class="alert-danger">
+                    <div style="padding:5px; height:220px;" id="des22" hidden>
+                        <hr />
                         <strong>Transportation :</strong>
                         <div style="width:140px;" class="radio">
                             <label style="float:left;">
@@ -228,7 +234,8 @@
                            @Html.DropDownListFor(m => m.travel_request.id_destination_city, asd, "Select", new { @class = "form-control", placeholder = "Destination" })
                         </div>
                         </div>
-                    <div style="padding:5px" id="des3" class="alert-warning">
+                    <div style="padding:5px; height:220px;" id="des33" hidden>
+                        <hr />
                         <strong>Transportation :</strong>
                         <div style="width:140px;" class="radio">
                             <label style="float:left;">
@@ -274,3 +281,29 @@
         <hr />
     </div>
 }
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--> 
+<script>
+    $(document).ready(function () {
+        $("#b1hide").click(function () {
+            $("#des2").fadeOut(500);
+        });
+        $("#b1show").click(function () {
+            $("#des2").fadeIn(500);
+            $("#des22").fadeIn(500);
+            $("#b1show").hide();
+        });
+        $("#b2hide").click(function () {
+            $("#des2").fadeOut(500);
+        });
+        $("#b2show").click(function () {
+            $("#des3").fadeIn(500);
+            $("#des33").fadeIn(500);
+            $("#b2show").hide();
+        });
+        $("#b3hide").click(function () {
+            $("#des3").fadeOut(500);
+        });
+    });
+</script>

@@ -80,7 +80,7 @@ namespace CONTRAST_WEB.Controllers
                 //img.Lat = Lat;
                 //img.Lon = Lon;
                 img.desc_upload = file.FileName;
-                img.numbers = ToString('Imagebyte');
+                //img.numbers = Imagebyte.ToString();
                 img.pic_path = "/UploadedImage/" + file.FileName;
                 //img.IsDelete = 0;
                 db.tb_r_travel_execution.Add(img);
@@ -99,7 +99,7 @@ namespace CONTRAST_WEB.Controllers
             CONTRASTEntities db = new CONTRASTEntities();
             var img = db.tb_r_travel_execution.SingleOrDefault(x => x.id_travel == imgID);
             return View();
-            //add field bytes type data Image
+            //add field "bytes" type data "Image"
             //return File(img.id_travel, "image/jpg");
         }
     }
